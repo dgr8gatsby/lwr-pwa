@@ -1,0 +1,21 @@
+{
+    "lwc": {
+        "modules": [
+            {
+                "dir": "<rootDir>/modules"
+            }
+        ]
+    },
+    "routes": [
+        {
+            "id": "app",
+            "path": "/",
+            "rootComponent": "app"
+        },
+        {
+            "id": "named-page",
+            "path": "/:namedPage",
+            "rootComponent": "app"
+        }
+    ]
+}

@@ -1,0 +1,31 @@
+{
+    "extends": "./config/tsconfig.settings.json",
+    "compilerOptions": {
+        "baseUrl": "src",
+        "rootDir": "src",
+        "outDir": "build",
+        "module": "commonjs",
+        "paths": {
+            "home": [
+                "modules/home/home.ts"
+            ],
+            "lwr/router": [
+                "node_modules/@lwrjs/router/build/modules/lwr/router/router.d.ts"
+            ],
+            "lwr/navigation": [
+                "node_modules/@lwrjs/router/build/modules/lwr/navigation/navigation.d.ts"
+            ],
+            "lwr/navigationContext": [
+                "node_modules/@lwrjs/router/build/modules/lwr/navigationContext/navigationContext.d.ts"
+            ],
+            "lwr/navigationService": [
+                "node_modules/@lwrjs/router/build/modules/lwr/navigationService/navigationService.d.ts"
+            ]
+        }
+    },
+    "exclude": [
+        "node_modules/**",
+        "**/__tests__/**",
+        "build"
+    ],
+}
