@@ -2,7 +2,7 @@
     "lwc": {
         "modules": [
             {
-                "dir": "<rootDir>/modules"
+                "dir": "<rootDir>/src/modules"
             }
         ]
     },
@@ -10,12 +10,12 @@
         {
             "id": "app",
             "path": "/",
-            "rootComponent": "app"
+            "rootComponent": "lwr/app"
         },
         {
             "id": "named-page",
             "path": "/:namedPage",
-            "rootComponent": "app"
+            "rootComponent": "lwr/app"
         }
     ]
 }
