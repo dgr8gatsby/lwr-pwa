@@ -11,11 +11,11 @@
   "scripts": {
     "test": "jest",
     "clean": "rimraf build/ pageObjects/ node_modules/ __lwr_cache__",
-    "build": "tsc -b",
-    "start": "node build/autostart.js",
+    "start": "node scripts/start.js",
     "start:prod": "MODE=prod yarn start",
     "start:amd": "MODE=compat yarn start"
   },
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dgr8gatsby/lwr-pwa.git"

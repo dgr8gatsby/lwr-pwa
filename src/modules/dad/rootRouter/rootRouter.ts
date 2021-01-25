@@ -9,23 +9,7 @@ const routes: RouteDefinition[] = [
         page: {
             type: 'home',
         },
-    },
-    {
-        id: 'namedPage',
-        path: '/:pageName',
-        handler: (): Promise<RouteHandlerModule> => import('example/namedPageHandler'),
-        page: {
-            type: 'namedPage',
-        },
-    },
-    {
-        id: 'recipes',
-        path: '/recipes/:title/:ingredients',
-        handler: (): Promise<RouteHandlerModule> => import('example/recipesPageHandler'),
-        page: {
-            type: 'recipes',
-        },
-    },
+    }
 ];
 
 export function createRootRouter(): Router<PageReference> {

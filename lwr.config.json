@@ -10,12 +10,13 @@
         {
             "id": "app",
             "path": "/",
-            "rootComponent": "lwr/app"
+            "rootComponent": "dad/app",
+            "layoutTemplate": "<layoutsDir>/main.html"
         },
         {
             "id": "named-page",
             "path": "/:namedPage",
-            "rootComponent": "lwr/app"
+            "rootComponent": "dad/app"
         }
     ]
 }
