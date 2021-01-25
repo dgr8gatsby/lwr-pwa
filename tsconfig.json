@@ -10,16 +10,16 @@
                 "modules/home/home.ts"
             ],
             "lwr/router": [
-                "node_modules/@lwrjs/router/build/modules/lwr/router/router.d.ts"
+                "./node_modules/@lwrjs/router/build/modules/lwr/router/router.d.ts"
             ],
             "lwr/navigation": [
-                "node_modules/@lwrjs/router/build/modules/lwr/navigation/navigation.d.ts"
+                "./node_modules/@lwrjs/router/build/modules/lwr/navigation/navigation.d.ts"
             ],
             "lwr/navigationContext": [
-                "node_modules/@lwrjs/router/build/modules/lwr/navigationContext/navigationContext.d.ts"
+                "./node_modules/@lwrjs/router/build/modules/lwr/navigationContext/navigationContext.d.ts"
             ],
             "lwr/navigationService": [
-                "node_modules/@lwrjs/router/build/modules/lwr/navigationService/navigationService.d.ts"
+                "./node_modules/@lwrjs/router/build/modules/lwr/navigationService/navigationService.d.ts"
             ]
         }
     },

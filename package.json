@@ -2,7 +2,12 @@
   "name": "lwr-pwa",
   "version": "1.0.0",
   "description": "Lightning Web Component Based Application with PWA",
-  "main": "server.js",
+  "types": "build/index.d.ts",
+  "main": "build/index.js",
+  "files": [
+    "build/**/*.js",
+    "pageObjects"
+  ],
   "scripts": {
     "test": "jest",
     "clean": "rimraf build/ pageObjects/ node_modules/ __lwr_cache__",
