@@ -1,3 +1,16 @@
 <template>
-    Hello, World!
+    <div class="grid">
+        <nav>
+            <img src="/public/assets/mustache.svg" alt="Mustache logo"></img>
+        </nav>
+        <main>
+            <button class="btn" type="button" onclick={prev}>&lt;</button>
+
+            <dad-joke joke={joke}></dad-joke>
+            <button class="btn" type="button" onclick={next}>&gt;</button>
+        </main>
+        <footer>
+            Served with 💛 from a Dadabase
+        </footer>
+    </div>
 </template>

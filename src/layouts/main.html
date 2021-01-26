@@ -1,12 +1,58 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Kevin Dad's App</title>
-        <link rel="shortcut icon" href="/public/assets/favicon.ico">
-    </head>
-    
-    <body>
-        {{{body}}}
-        {{{lwr_resources}}}
-    </body>
+<html lang='en-us'>
+
+<head>
+    <title>Papa Joke</title>
+    <link rel="shortcut icon" href="/public/assets/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="The dad joke application that makes dad jokes better, for all of us!" />
+    <meta name="theme-color" content="#EB8400" />
+    <link rel="manifest" href="/public/assets/manifest.json">
+    <link rel="apple-touch-icon" href="/public/assets/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/public/assets/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/public/assets/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/public/assets/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/public/assets/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="/public/assets/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="/public/assets/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/public/assets/apple-touch-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/public/assets/apple-touch-icon-180x180.png" />
+    <style>
+        :root {
+            --app-font-family: 'Helvetica';
+            --app-background-color: #FDFBD0;
+            --app-font-size: calc(56px + 0.9vw);
+        }
+
+        html {
+            background-color: var(--app-background-color);
+            overflow: auto;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    {{{body}}}
+    {{{lwr_resources}}}
+    <noscript>
+        <h1>Q: How do you deal with a JavaScript bug?</h1>
+        <h3>A: You console it!</h3>
+        <div>This app requires JavaScript to function, a very small amount!</div>
+    </noscript>
+    <script type="text/javascript">
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js');
+        }
+    </script>
+</body>
+
 </html>
