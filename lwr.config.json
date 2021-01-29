@@ -14,14 +14,15 @@
             "layoutTemplate": "<layoutsDir>/main.html"
         }
     ],
-    "assetDirs": [
+    "assets": [
         {
-            "dir": "<rootDir>/src/serviceWorkers/sw.js",
-            "path": "/public/sw.js"
+            "alias": "assetsDir",
+            "dir": "<rootDir>/src/assets",
+            "urlPath": "/public/assets"
         },
         {
-            "dir": "<rootDir>/src",
-            "path": "/public"
+            "file": "<rootDir>/src/serviceWorkers/sw.js",
+            "urlPath": "/sw.js"
         }
     ]
 }
