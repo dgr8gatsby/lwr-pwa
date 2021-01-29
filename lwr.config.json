@@ -12,11 +12,6 @@
             "path": "/",
             "rootComponent": "dad/app",
             "layoutTemplate": "<layoutsDir>/main.html"
-        },
-        {
-            "id": "named-page",
-            "path": "/:namedPage",
-            "rootComponent": "dad/app"
         }
     ],
     "assetDirs": [
