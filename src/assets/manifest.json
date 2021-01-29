@@ -89,7 +89,7 @@
             "sizes": "16x16"
         },
         {
-            "src": "img/mustache_512_512.png",
+            "src": "mustache_512_512.png",
             "sizes": "512x512",
             "purpose": "any maskable"
         }

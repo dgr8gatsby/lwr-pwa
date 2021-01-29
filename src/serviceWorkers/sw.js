@@ -1,7 +1,7 @@
-const cacheName = 'staledadjokes_v4';
+const cacheName = 'staledadjokes_v5';
 
 const APPFILES = [
-  '/index.html',
+  '/main.html',
   '/public/assets/favicon.ico',
   '/public/assets/mustache.svg',
 ];

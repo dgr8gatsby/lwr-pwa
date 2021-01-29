@@ -23,4 +23,19 @@
     font-size: 4vw;
     margin-top: 10px;
     text-align:right;
+    animation: fadeIn 5s ease;
+
+}
+
+.run-fadeIn{
+    animation: fadeIn 5s ease
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }

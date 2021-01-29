@@ -18,5 +18,15 @@
             "path": "/:namedPage",
             "rootComponent": "dad/app"
         }
+    ],
+    "assetDirs": [
+        {
+            "dir": "<rootDir>/src/serviceWorkers/sw.js",
+            "path": "/public/sw.js"
+        },
+        {
+            "dir": "<rootDir>/src",
+            "path": "/public"
+        }
     ]
 }
