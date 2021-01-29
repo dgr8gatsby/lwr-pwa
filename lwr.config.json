@@ -16,13 +16,12 @@
     ],
     "assets": [
         {
-            "alias": "assetsDir",
-            "dir": "<rootDir>/src/assets",
-            "urlPath": "/public/assets"
-        },
-        {
             "file": "<rootDir>/src/serviceWorkers/sw.js",
             "urlPath": "/sw.js"
+        },
+        {
+            "dir": "<rootDir>/src",
+            "urlPath": "/public"
         }
     ]
 }
