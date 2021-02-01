@@ -1,20 +1,21 @@
-const cacheName = 'staledadjokes_v5';
+const cacheName = 'staledadjokes_v7';
 
 const APPFILES = [
-  '/main.html',
-  '/public/assets/favicon.ico',
-  '/public/assets/mustache.svg',
+  //'./public/main.html',
+  //'./assets/favicon.ico',
+  './assets/mustache.svg',
 ];
 
 self.addEventListener ('install', e => {
-  console.log ('[Service Worker] Install');
   e.waitUntil (
-    caches.open (cacheName).then (cache => {
-      console.log ('[Service Worker] Caching all: app shell and content');
-      console.log (cache);
-      console.log (APPFILES);
-      return cache.addAll (APPFILES);
-    })
+    caches
+      .open (cacheName)
+      .then (cache => {
+        return cache.addAll (APPFILES);
+      })
+      .catch (error => {
+        console.log (error);
+      })
   );
 });
 

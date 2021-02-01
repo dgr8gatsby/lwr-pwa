@@ -36,18 +36,16 @@ layoutsDir = `src/layouts`
 
 ### Configure assetDirs
 ```json
-{
-    "assetDirs":[
+"assets": [
         {
-            "dir":"<rootDir>/src/serviceWorkers/sw.js",
-            "path":"/public/sw.js"
+            "file": "<rootDir>/src/serviceWorkers/sw.js",
+            "urlPath": "/sw.js"
         },
         {
-            "dir":"<rootDir>/src",
-            "path:"/public"
+            "dir": "<rootDir>/src",
+            "urlPath": "/public"
         }
     ]
-}
 ```
 
 Supports explict file path, as well as directories
