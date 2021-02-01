@@ -1,4 +1,4 @@
-const cacheName = 'staledadjokes_v7';
+const cacheName = 'staledadjokes_v8';
 
 const APPFILES = [
   //'./public/main.html',
@@ -6,31 +6,28 @@ const APPFILES = [
   './assets/mustache.svg',
 ];
 
-self.addEventListener ('install', e => {
-  e.waitUntil (
+self.addEventListener('install', e => {
+  e.waitUntil(
     caches
-      .open (cacheName)
-      .then (cache => {
-        return cache.addAll (APPFILES);
+      .open(cacheName)
+      .then(cache => {
+        return cache.addAll(APPFILES);
       })
-      .catch (error => {
-        console.log (error);
+      .catch(error => {
+        console.log(error);
       })
   );
 });
 
-self.addEventListener ('fetch', e => {
-  e.respondWith (
-    caches.match (e.request).then (r => {
-      console.log ('[Service Worker] Fetching resource: ' + e.request.url);
+self.addEventListener('fetch', e => {
+  e.respondWith(
+    caches.match(e.request).then(r => {
+      console.log('[Service Worker] Fetching resource: ' + e.request.url);
       return (
         r ||
-        fetch (e.request).then (response => {
-          return caches.open (cacheName).then (cache => {
-            console.log (
-              '[Service Worker] Caching new resource: ' + e.request.url
-            );
-            cache.put (e.request, response.clone ());
+        fetch(e.request).then(response => {
+          return caches.open(cacheName).then(cache => {
+            cache.put(e.request, response.clone());
             return response;
           });
         })
