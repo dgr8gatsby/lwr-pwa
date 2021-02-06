@@ -4,8 +4,9 @@ const FADE_IN = 'fadeIn';
 export default class Joke extends LightningElement {
     constructor() {
         super();
+        this.punchlineElement = document.createElement("div");
     }
-    punchlineElement: HTMLElement = undefined;
+    punchlineElement: HTMLElement;
     isAnimating: boolean = true;
     _joke: any = {};
 
@@ -20,12 +21,12 @@ export default class Joke extends LightningElement {
         return this._joke;
     }
 
-    handleAnimationEnd(event: Event) {
+    handleAnimationEnd(event: any) {
         event.path[0].classList.remove(FADE_IN);
         this.isAnimating = false;
     }
 
     renderedCallback() {
-        this.punchlineElement = this.template.querySelector('.punchline') || undefined;
+        this.punchlineElement = this.template.querySelector('.punchline') || document.createElement("div");;
     }
 }

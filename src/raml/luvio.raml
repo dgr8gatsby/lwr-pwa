@@ -1,0 +1,34 @@
+#%RAML 1.0 Overlay
+extends: api.raml
+
+uses: 
+    luvio: luvio://annotations.raml
+
+(luvio.keyPrefix): 'dadapp::'
+
+types:
+    Joke: 
+        (luvio.key):
+            id: _id
+
+/jokes: 
+    get: 
+        (luvio.adapter):
+        name: getJokes
+/{id}:
+    get: 
+        (luvio.adapter):
+        name: getJoke
+
+/composit/{ids}: 
+    get: 
+        (luvio.adapter):
+            name: getCompositJoke
+        (luvio.composit):
+            resource: /joke/{id}
+            uriParameters: 
+                id: id
+            envelope:
+                path: joke
+                statusCode: statusCode
+                body: joke
