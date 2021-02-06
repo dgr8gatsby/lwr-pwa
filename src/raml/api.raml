@@ -1,0 +1,36 @@
+#%RAML 1.0
+title: Deliveries API
+version: '1.0'
+mediaType: application/json
+protocols:
+  - https
+baseUri: www.papajoke.com/api/
+
+types: 
+  Ids:
+    type: string[]
+  Joke:
+    type: Object
+    properites:
+      revision: number
+      _id: string
+      type: string
+      headline: string
+/jokes
+  get:
+    description: Retrieve deliveries for a zipcode
+    responses:
+      '200':
+        description: Success
+        body:
+          application/json:
+            type: Ids
+/joke/{id}:
+  get:
+    description: Retrieve a single joke from
+    responses:
+      '200':
+        description: Success
+        body:
+            application/json:
+                type: Joke
