@@ -2,33 +2,21 @@
 extends: api.raml
 
 uses: 
-    luvio: luvio://annotations.raml
+  luvio: luvio://annotations.raml
 
 (luvio.keyPrefix): 'dadapp::'
 
 types:
-    Joke: 
-        (luvio.key):
-            id: _id
+  Joke: 
+    (luvio.key):
+      id: _id
 
 /jokes: 
-    get: 
-        (luvio.adapter):
-        name: getJokes
-/{id}:
-    get: 
-        (luvio.adapter):
-        name: getJoke
+  get: 
+    (luvio.adapter):
+      name: getJokes
 
-/composit/{ids}: 
-    get: 
-        (luvio.adapter):
-            name: getCompositJoke
-        (luvio.composit):
-            resource: /joke/{id}
-            uriParameters: 
-                id: id
-            envelope:
-                path: joke
-                statusCode: statusCode
-                body: joke
+/jokes/{id}:
+  get: 
+    (luvio.adapter):
+      name: getJoke

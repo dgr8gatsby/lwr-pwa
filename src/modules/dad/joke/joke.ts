@@ -27,6 +27,6 @@ export default class Joke extends LightningElement {
     }
 
     renderedCallback() {
-        this.punchlineElement = this.template.querySelector('.punchline') || document.createElement("div");;
+        this.punchlineElement = this.template.querySelector('.punchline') || document.createElement("div");
     }
 }

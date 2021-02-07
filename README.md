@@ -24,10 +24,10 @@ yarn start
 ```json
 {
     "routes":[
-        "id":"app",
-        "path":"/",
-        "rootComponent":"dad/app",
-        "layoutTemplate":"<layoutsDir>/main.html"
+        "id": "app",
+        "path": "/",
+        "rootComponent": "dad/app",
+        "layoutTemplate": "<layoutsDir>/main.html"
     ]
 }
 ```
@@ -36,7 +36,8 @@ layoutsDir = `src/layouts`
 
 ### Configure assetDirs
 ```json
-"assets": [
+{
+    "assets": [
         {
             "file": "<rootDir>/src/serviceWorkers/sw.js",
             "urlPath": "/sw.js"
@@ -46,9 +47,10 @@ layoutsDir = `src/layouts`
             "urlPath": "/public"
         }
     ]
+}
 ```
 
-Supports explict file path, as well as directories
+Supports explicit file path, as well as directories
 Default folder for assets = `src/assets`
 
 ### TypeScript

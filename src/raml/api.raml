@@ -1,5 +1,5 @@
 #%RAML 1.0
-title: Deliveries API
+title: Dad Jokes API
 version: '1.0'
 mediaType: application/json
 protocols:
@@ -7,30 +7,33 @@ protocols:
 baseUri: www.papajoke.com/api/
 
 types: 
-  Ids:
-    type: string[]
+  Jokes:
+    type: object
+    properties: 
+      items: Joke[]
   Joke:
-    type: Object
-    properites:
+    type: object
+    properties:
       revision: number
       _id: string
       type: string
       headline: string
-/jokes
+
+/jokes:
   get:
-    description: Retrieve deliveries for a zipcode
+    description: Retrieve a list of jokes
     responses:
-      '200':
-        description: Success
+      200:
         body:
           application/json:
-            type: Ids
-/joke/{id}:
+            type: Joke
+/jokes/{id}:
+  uriParameters: 
+      id: string
   get:
-    description: Retrieve a single joke from
+    description: Retrieve a joke by id
     responses:
-      '200':
-        description: Success
+      200:
         body:
             application/json:
                 type: Joke

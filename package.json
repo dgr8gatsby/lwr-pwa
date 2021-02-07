@@ -9,8 +9,9 @@
     "pageObjects"
   ],
   "scripts": {
+    "build": "luvio generate src/raml/luvio.raml src/raml/generated",
     "test": "jest",
-    "clean": "rimraf build/ pageObjects/ node_modules/ __lwr_cache__",
+    "clean": "rimraf build/ pageObjects/ node_modules/ __lwr_cache__ src/raml/generated",
     "start": "node scripts/start.js",
     "start:prod": "MODE=prod yarn start",
     "start:amd": "MODE=compat yarn start"
@@ -35,6 +36,8 @@
     "@babel/core": "^7.12.10",
     "@babel/preset-typescript": "^7.12.7",
     "@babel/register": "^7.12.10",
+    "@luvio/engine": "^0.27.0",
+    "@luvio/lwc-luvio": "^0.27.0",
     "@types/jest": "^26.0.20",
     "lerna": "^3.22.1",
     "lwc": "^1.17.0",
@@ -46,5 +49,9 @@
   },
   "engines": {
     "node": ">14.15.0 <15"
+  },
+  "devDependencies": {
+    "@luvio/cli": "^0.27.0",
+    "@luvio/compiler": "^0.27.0"
   }
 }
