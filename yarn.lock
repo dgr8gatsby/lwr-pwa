@@ -2558,10 +2558,17 @@
   dependencies:
     amf-client-js "4.2.0"
 
-"@luvio/engine@^0.27.0":
+"@luvio/engine@0.27.0", "@luvio/engine@^0.27.0":
   version "0.27.0"
   resolved "http://npm.lwcjs.org/@luvio/engine/-/@luvio/engine-0.27.0/1c543cb3d913790f5364cba90ac53f539961fb7e.tgz#1c543cb3d913790f5364cba90ac53f539961fb7e"
   integrity sha512-+TA4dfm7Vz/rWbxfM+FXcJ0gNSarAI8IoRImjN99vWYESzDj6340gBfPebfNZAiXxdROfBTn22o52knhGOqi+g==
+
+"@luvio/lwc-luvio@^0.27.0":
+  version "0.27.0"
+  resolved "http://npm.lwcjs.org/@luvio/lwc-luvio/-/@luvio/lwc-luvio-0.27.0/55947f21ada61e44655a87efd1d6da0cd66aebbb.tgz#55947f21ada61e44655a87efd1d6da0cd66aebbb"
+  integrity sha512-e2e2wfeUyvyHCF5yIcnjDVngt1x3lztLTg+j/NOxi80HvPvBOUW6L4MPnDwHoJSxZXlqDPngyvmxs1tFbjUkZg==
+  dependencies:
+    "@luvio/engine" "0.27.0"
 
 "@lwc/babel-plugin-component@1.17.0":
   version "1.17.0"
