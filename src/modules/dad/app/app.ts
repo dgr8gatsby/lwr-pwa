@@ -1,5 +1,6 @@
-import { LightningElement } from 'lwc';
+import { LightningElement, wire } from 'lwc';
 import Navigo from 'navigo';
+import { getJokes } from '../wires/wires'
 
 const router = new Navigo('/', { hash: true });
 
@@ -9,7 +10,7 @@ export default class App extends LightningElement {
 
         router.on('/', async () => { });
         // Get the correct joke when navigating to this route
-        router.on('/joke/:id', async (url: any) => {
+        router.on('/jokes/:id', async (url: any) => {
             await this.getJokeById(url.data.id);
         })
         this.initialize();
@@ -18,6 +19,16 @@ export default class App extends LightningElement {
     jokeIds = [];
     currentJokeIndex: number = 0;
     currentJoke: any = null;
+
+    // @wire(getJokes)
+    // getJokesWire({ error, data }): void {
+
+    //     if (data) {
+    //         console.log(`Data! ${data}`);
+    //     } else if (error) {
+    //         console.log(`Data! ${error}`);
+    //     }
+    // }
 
     // Async calls to the backend API
     async getJokes() {
@@ -31,12 +42,12 @@ export default class App extends LightningElement {
                 console.error(`Error: ${error}`);
             });
 
-        let jokeIds = await response.json();
-        this.jokeIds = Object.values(jokeIds);
+        let js = await response.json();
+        this.jokeIds = Object.values(js.items.map((value: string) => value._id));
     }
 
     async getJokeById(id: string) {
-        let joke = await fetch(`http://localhost:3001/api/joke/${id}`, {
+        let joke = await fetch(`http://localhost:3001/api/jokes/${id}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -62,7 +73,7 @@ export default class App extends LightningElement {
             // Try to navigate to the existing joke if one was pasted in
             const path = window.location.hash.split('/');
             if (path.length === 3 && path[1] === 'joke' && path[2].length >= 24) {
-                router.navigate(`joke/${path[2]}`);
+                router.navigate(`jokes/${path[2]}`);
             } else {
                 this.next();
             }
@@ -77,7 +88,7 @@ export default class App extends LightningElement {
         } else {
             this.currentJokeIndex = 0;
         }
-        router.navigate(`joke/${this.jokeIds[this.currentJokeIndex]}`);
+        router.navigate(`jokes/${this.jokeIds[this.currentJokeIndex]}`);
     }
 
     prev() {
@@ -86,7 +97,7 @@ export default class App extends LightningElement {
         } else {
             this.currentJokeIndex = this.jokeIds.length - 1;
         }
-        router.navigate(`joke/${this.jokeIds[this.currentJokeIndex]}`);
+        router.navigate(`jokes/${this.jokeIds[this.currentJokeIndex]}`);
     }
 
     handleErrors(response: any) {

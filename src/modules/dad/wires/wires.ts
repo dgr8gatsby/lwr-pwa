@@ -7,11 +7,10 @@ import { getJokeAdapterFactory } from '../../../raml/generated/adapters/getJoke'
 
 // Create the luvio adapters
 const getJokesLuvioAdapter = getJokesAdapterFactory(luvio);
-const getJokeLuvioAdapter = getJokeAdapterFactory(luvio); 
+const getJokeLuvioAdapter = getJokeAdapterFactory(luvio);
 
 // Create wire adapters
 const GetJokesWireAdapter = createWireAdapterConstructor(getJokesLuvioAdapter, 'getJokes', luvio);
 const GetJokeWireAdapter = createWireAdapterConstructor(getJokeLuvioAdapter, 'getJoke', luvio);
 
-export GetJokesWireAdapter as getJokes;
-export GetJokeWireAdapter as getJoke;
+export { GetJokesWireAdapter as getJokes, GetJokeWireAdapter as getJoke };
