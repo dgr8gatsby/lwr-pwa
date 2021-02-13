@@ -1,6 +1,6 @@
 import { LightningElement, wire } from 'lwc';
 import Navigo from 'navigo';
-import { getJokes } from '../wires/wires'
+import { getJokes } from '../../wires/wires'
 
 const router = new Navigo('/', { hash: true });
 
@@ -21,6 +21,7 @@ export default class App extends LightningElement {
     currentJoke: any = null;
 
     // @wire(getJokes)
+    // objTest: any;
     // getJokesWire({ error, data }): void {
 
     //     if (data) {

@@ -1,5 +1,6 @@
 import { LightningElement, api } from 'lwc';
 const FADE_IN = 'fadeIn';
+const TWITTER_URL = 'https://twitter.com/intent/tweet';
 
 export default class Joke extends LightningElement {
     constructor() {
@@ -19,6 +20,10 @@ export default class Joke extends LightningElement {
     }
     get joke() {
         return this._joke;
+    }
+
+    get tweetLink() {
+        return `${TWITTER_URL}?text=${encodeURI(this.joke.headline)}%0A${encodeURI(this.joke.punchline)}%0A&hashtags=papajoke.com`;
     }
 
     handleAnimationEnd(event: any) {

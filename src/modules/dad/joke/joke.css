@@ -43,3 +43,20 @@
         opacity: 1;
     }
 }
+
+.tweet-button {
+    margin-top: 20px;
+    display:flex;
+    align-items: center;
+    float: right;
+    padding: 5px 10px;
+    background-color: #EB8400;
+    color: white;
+    border-radius: 5px;
+    font-family: "Helvetica Neue";
+    text-decoration: none;
+}
+
+img{
+    margin-right: 10px;
+}
