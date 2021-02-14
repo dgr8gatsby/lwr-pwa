@@ -33,7 +33,7 @@ export default class App extends LightningElement {
 
     // Async calls to the backend API
     async getJokes() {
-        let response: any = await fetch('https://www.papajoke.com/api/jokes', {
+        let response: any = await fetch('https://localhost:3001/api/jokes', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -48,7 +48,7 @@ export default class App extends LightningElement {
     }
 
     async getJokeById(id: string) {
-        let joke = await fetch(`https://www.papajoke.com/api/jokes/${id}`, {
+        let joke = await fetch(`https://localhost:3001/api/jokes/${id}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
