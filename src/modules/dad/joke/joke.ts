@@ -23,7 +23,7 @@ export default class Joke extends LightningElement {
     }
 
     get tweetLink() {
-        return `${TWITTER_URL}?text=${encodeURI(this.joke.headline)}%0A${encodeURI(this.joke.punchline)}%0A&hashtags=papajoke.com`;
+        return `${TWITTER_URL}?text=${encodeURI(this.joke.headline)}%0A${encodeURI(this.joke.punchline)}%0A&url=${encodeURI('https://www.papajoke.com/')}&hashtags=papajoke,dadabase`;
     }
 
     handleAnimationEnd(event: any) {
