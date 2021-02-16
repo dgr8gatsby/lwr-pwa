@@ -9,7 +9,6 @@
     "pageObjects"
   ],
   "scripts": {
-    "build": "luvio generate src/raml/luvio.raml src/raml/generated",
     "test": "jest",
     "clean": "rimraf build/ pageObjects/ node_modules/ __lwr_cache__ src/raml/generated",
     "start": "node scripts/start.js",
