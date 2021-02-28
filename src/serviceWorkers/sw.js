@@ -1,4 +1,4 @@
-const cacheName = 'staledadjokes_v8';
+const cacheName = 'staledadjokes_v9';
 
 const APPFILES = [
   //'./public/main.html',
