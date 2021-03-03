@@ -33,7 +33,11 @@ export default class App extends LightningElement {
 
     // Async calls to the backend API
     async getJokes() {
-        let response: any = await fetch('/api/jokes', {
+        let api_url = '/api/jokes';
+        if(window.location.hostname == 'localhost'){
+            api_url = "http://localhost:3001/jokes"
+        }
+        let response: any = await fetch(api_url, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -48,7 +52,11 @@ export default class App extends LightningElement {
     }
 
     async getJokeById(id: string) {
-        let joke = await fetch(`/api/jokes/${id}`, {
+        let api_url = '/api/jokes';
+        if(window.location.hostname == 'localhost'){
+            api_url = "http://localhost:3001/jokes"
+        }
+        let joke = await fetch(`${api_url}/${id}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'

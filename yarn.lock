@@ -5390,6 +5390,11 @@ lru-cache@^6.0.0:
   dependencies:
     yallist "^4.0.0"
 
+luvio@^0.28.0:
+  version "0.28.0"
+  resolved "https://registry.yarnpkg.com/luvio/-/luvio-0.28.0.tgz#290c61e05b902bd3ff5e33b33d737f23e78431c7"
+  integrity sha512-ya38ZX02YiXC3tH0UJJuvgIQhfDyqgFjDn1Yd1BLuIdzxrM+awizsIp+QNOV3is2tyEGme8q8I/+pS48rIQHUQ==
+
 lwc@^1.17.0:
   version "1.17.0"
   resolved "https://registry.yarnpkg.com/lwc/-/lwc-1.17.0.tgz#3ce3976a59ec3538fff5cad10286058e84d9c04e"

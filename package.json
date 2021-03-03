@@ -37,6 +37,7 @@
     "@babel/register": "^7.12.10",
     "@types/jest": "^26.0.20",
     "lerna": "^3.22.1",
+    "luvio": "^0.28.0",
     "lwc": "^1.17.0",
     "lwr": "0.0.2-alpha51",
     "navigo": "^8.7.3",
