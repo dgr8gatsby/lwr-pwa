@@ -1,7 +1,7 @@
 <template>
     <div class="grid">
         <nav>
-            <img src="/public/assets/mustache.svg" alt="Mustache logo"></img>
+            <img src="/public/assets/mustache.svg" alt="Mustache logo" title={metaTitle}></img>
         </nav>
         <main>
             <button class="btn" type="button" onclick={prev}>&lt;</button>
@@ -9,7 +9,7 @@
             <dad-joke joke={joke}></dad-joke>
             <button class="btn" type="button" onclick={next}>&gt;</button>
         </main>
-        <footer>
+        <footer title={metaTitle}>
             Served with 💛 from a Dadabase
         </footer>
     </div>

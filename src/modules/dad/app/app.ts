@@ -1,4 +1,4 @@
-import { LightningElement, wire } from 'lwc';
+import { LightningElement, wire, track } from 'lwc';
 import Navigo from 'navigo';
 import { getJokes } from '../../wires/wires'
 
@@ -19,7 +19,7 @@ export default class App extends LightningElement {
     jokeIds = [];
     currentJokeIndex: number = 0;
     currentJoke: any = null;
-
+    @track metadata: any = {};
     // @wire(getJokes)
     // objTest: any;
     // getJokesWire({ error, data }): void {
@@ -51,6 +51,26 @@ export default class App extends LightningElement {
         this.jokeIds = Object.values(js.items.map((value: string) => value._id));
     }
 
+    async getMetadata(){
+        let api_url = '/api/meta';
+        if(window.location.hostname == 'localhost'){
+            api_url = "http://localhost:3001/meta"
+        }
+
+        let response: any = await fetch(api_url, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then(this.handleErrors)
+            .catch((error) => {
+                console.error(`Error: ${error}`);
+            });
+
+        let js = await response.json();
+        this.metadata = js;
+    }
+
     async getJokeById(id: string) {
         let api_url = '/api/jokes';
         if(window.location.hostname == 'localhost'){
@@ -76,6 +96,7 @@ export default class App extends LightningElement {
 
     // Methods
     async initialize() {
+        this.getMetadata();
         await this.getJokes();
         var route = router.getCurrentLocation();
         if (route.url.length) {
@@ -89,6 +110,14 @@ export default class App extends LightningElement {
         } else {
             this.next();
         }
+    }
+
+    get metaTitle(){
+        if(this.metadata.totalRenders){
+            return `${this.metadata.totalRenders} dad jokes rendered`
+        }
+
+        return '';
     }
 
     next() {
