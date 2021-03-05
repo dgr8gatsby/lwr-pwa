@@ -5,6 +5,9 @@
             <section part="punchline" class='punchline'>{joke.punchline}
             </section>
             <a class="tweet-button" href={tweetLink} target="_blank"><img src="/public/assets/chicken.svg" />tweet</a>
+            <template if:true={nextJoke}>
+                <a class="tweet-button" href={nextJokeHref}>See a related joke</a>
+            </template>
         </article>
     </template>
 </template>

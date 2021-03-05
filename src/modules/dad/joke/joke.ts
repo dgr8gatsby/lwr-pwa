@@ -19,6 +19,17 @@ export default class Joke extends LightningElement {
         return this._joke;
     }
 
+    get nextJoke(){
+        if(this._joke.nextJokeId){
+            return this._joke.nextJokeId;
+        }
+        return undefined;
+    }
+
+    get nextJokeHref(){
+        return `#/jokes/${this.nextJoke}`;
+    }
+
     get tweetLink() {
         return `${TWITTER_URL}?text=${encodeURI(this.joke.headline)}%0A${encodeURI(this.joke.punchline)}%0A&url=${encodeURI('https://www.papajoke.com/')}&hashtags=papajoke,dadabase`;
     }

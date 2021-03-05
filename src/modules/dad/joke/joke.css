@@ -2,46 +2,14 @@
     display:block;
 }
 
-/* Large Screen */
-@media (min-width: 700px) {
-    .headline {
-        font-size:4vw;
-    }
-
-    .punchline {
-        font-size: 4vw;
-        margin-top: 50px;;
-        text-align:right;
-    }
-}
-
 .headline {
-    font-size:8vw;
+    font-size:2em;
 }
 
 .punchline {
-    font-size: 6vw;
+    font-size: 1em;
     margin-top: 10px;
     text-align:right;
-}
-
-.fadeIn{
-    animation: fadeIn 7s ease
-}
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    69% {
-        opacity: 0;
-    }
-    70%{
-        opacity: .25;
-    }
-    100% {
-        opacity: 1;
-    }
 }
 
 .tweet-button {
@@ -59,4 +27,17 @@
 
 img{
     margin-right: 10px;
+}
+
+/* Large Screen */
+@media (min-width: 768px) {
+    .headline {
+        font-size:4em;
+    }
+
+    .punchline {
+        font-size: 2em;
+        margin-top: 50px;;
+        text-align:right;
+    }
 }
