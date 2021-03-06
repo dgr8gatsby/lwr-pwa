@@ -31,7 +31,6 @@ export default class Joke extends LightningElement {
     }
 
     get tweetLink() {
-        console.log(window.location.href);
         return `${TWITTER_URL}?text=${encodeURI(this.joke.headline)}%0A${encodeURI(this.joke.punchline)}%0A&url=${encodeURI(window.location.href)}&hashtags=papajoke,dadabase`;
     }
 
