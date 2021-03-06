@@ -23,6 +23,8 @@
     border-radius: 5px;
     font-family: "Helvetica Neue";
     text-decoration: none;
+    min-height: 29px;
+    margin-left: 10px;
 }
 
 img{
@@ -41,3 +43,14 @@ img{
         text-align:right;
     }
 }
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 5fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "."
+      ".";
+  }
+  

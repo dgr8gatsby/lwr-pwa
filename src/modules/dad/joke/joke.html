@@ -1,13 +1,18 @@
 <template>
     <template if:true={joke}>
-        <article class='primary'>
-            <section part="headline" class='headline'>{joke.headline}</section>
-            <section part="punchline" class='punchline'>{joke.punchline}
-            </section>
-            <a class="tweet-button" href={tweetLink} target="_blank"><img src="/public/assets/chicken.svg" />tweet</a>
-            <template if:true={nextJoke}>
-                <a class="tweet-button" href={nextJokeHref}>See a related joke</a>
-            </template>
-        </article>
+        <div class="grid-container">
+            <div>
+                <a class="tweet-button" href={tweetLink} target="_blank"><img
+                        src="/public/assets/chicken.svg" />tweet</a>
+                <template if:true={nextJoke}>
+                    <a class="tweet-button" href={nextJokeHref}>See a related joke</a>
+                </template>
+            </div>
+            <article class='primary'>
+                <section part="headline" class='headline'>{joke.headline}</section>
+                <section part="punchline" class='punchline'>{joke.punchline}
+                </section>
+            </article>
+        </div>
     </template>
 </template>

@@ -1,6 +1,6 @@
-import { LightningElement, wire, track } from 'lwc';
+import { LightningElement, track } from 'lwc';
 import Navigo from 'navigo';
-import { getJokes } from '../../wires/wires'
+// import { getJokes } from '../../wires/wires'
 
 const router = new Navigo('/', { hash: true });
 //const router = new Navigo('/');
@@ -49,7 +49,7 @@ export default class App extends LightningElement {
             });
 
         let js = await response.json();
-        this.jokeIds = Object.values(js.items.map((value: string) => value._id));
+        this.jokeIds = Object.values(js.items.map((value: any) => value._id));
     }
 
     async getMetadata(){
