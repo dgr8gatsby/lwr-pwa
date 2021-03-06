@@ -2,7 +2,8 @@ import { LightningElement, wire, track } from 'lwc';
 import Navigo from 'navigo';
 import { getJokes } from '../../wires/wires'
 
-const router = new Navigo('/', { hash: true });
+//const router = new Navigo('/', { hash: true });
+const router = new Navigo('/');
 
 export default class App extends LightningElement {
     constructor() {
