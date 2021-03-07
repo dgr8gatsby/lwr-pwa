@@ -1,5 +1,5 @@
 import { LightningElement, api } from 'lwc';
-const FADE_IN = 'fadeIn';
+
 const TWITTER_URL = 'https://twitter.com/intent/tweet';
 
 export default class Joke extends LightningElement {
@@ -32,6 +32,27 @@ export default class Joke extends LightningElement {
 
     get tweetLink() {
         return `${TWITTER_URL}?text=${encodeURI(this.joke.headline)}%0A${encodeURI(this.joke.punchline)}%0A&url=${encodeURI(window.location.href)}&hashtags=papajoke,dadabase`;
+    }
+
+    get why(){
+        if(this._joke.why){
+            return this._joke.why;
+        }
+    }
+
+    handleWhyClick(){
+        console.log(this.why);
+        let overlay : any = this.template.querySelector('.overlay');
+        if(overlay){
+            overlay.style.width = '100%';
+        }
+    }
+
+    handleWhyClose(){
+        let overlay :any = this.template.querySelector('.overlay');
+        if(overlay){
+            overlay.style.width = 0;
+        }
     }
 
     renderedCallback() {

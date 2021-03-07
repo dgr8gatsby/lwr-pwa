@@ -25,6 +25,8 @@
     text-decoration: none;
     min-height: 29px;
     margin-left: 10px;
+    font-size:small;
+    cursor: hand;
 }
 
 img{
@@ -53,4 +55,31 @@ img{
       "."
       ".";
   }
+
+  .overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(255, 135, 36, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+  }
   
+  .overlay-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-size: 1.5em;
+    color: white;
+  }
+
+  .explain{
+      width: 80%;
+      text-align: left;
+  }

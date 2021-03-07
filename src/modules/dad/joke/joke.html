@@ -7,12 +7,24 @@
                 <template if:true={nextJoke}>
                     <a class="tweet-button" href={nextJokeHref}>See a related joke</a>
                 </template>
+                <template if:true={why}>
+                    <a class="tweet-button" onclick={handleWhyClick}>?</a>
+                </template>
             </div>
             <article class='primary'>
                 <section part="headline" class='headline'>{joke.headline}</section>
                 <section part="punchline" class='punchline'>{joke.punchline}
                 </section>
             </article>
+        </div>
+        <!-- Modal -->
+        <div class="overlay">
+            <div class="overlay-content">
+                <div class="explain">
+                    {why}
+                </div>
+                <a class="tweet-button" onclick={handleWhyClose}>Close</a>
+            </div>
         </div>
     </template>
 </template>
