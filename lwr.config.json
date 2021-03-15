@@ -12,12 +12,23 @@
             "path": "/",
             "rootComponent": "dad/app",
             "layoutTemplate": "<layoutsDir>/main.html"
+        },
+        {
+            "id":"joke",
+            "path":"/jokes/:id",
+            "rootComponent":"dad/app",
+            "layoutTemplate": "<layoutsDir>/main.html"
         }
     ],
     "errorRoutes":[
         {
-            "id":"not_found",
+            "id":"page_not_found",
             "status":404,
+            "rootComponent":"error/notFound"
+        },
+        {
+            "id":"internal_error",
+            "status":500,
             "rootComponent":"error/notFound"
         }
     ],

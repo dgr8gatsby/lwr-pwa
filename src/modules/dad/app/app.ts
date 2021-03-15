@@ -2,8 +2,8 @@ import { LightningElement, track } from 'lwc';
 import Navigo from 'navigo';
 // import { getJokes } from '../../wires/wires'
 
-const router = new Navigo('/', { hash: true });
-//const router = new Navigo('/');
+//const router = new Navigo('/', { hash: true });
+const router = new Navigo('/');
 
 export default class App extends LightningElement {
     constructor() {
@@ -102,9 +102,9 @@ export default class App extends LightningElement {
         var route = router.getCurrentLocation();
         if (route.url.length) {
             // Try to navigate to the existing joke if one was pasted in
-            const path = window.location.hash.split('/');
-            if (path.length === 3 && path[1] === 'joke' && path[2].length >= 24) {
-                router.navigate(`jokes/${path[2]}`);
+            const path = route.url.split('/');
+            if (path[0] === 'jokes' && path[1].length >= 24) {
+                router.navigate(`jokes/${path[1]}`);
             } else {
                 this.next();
             }
