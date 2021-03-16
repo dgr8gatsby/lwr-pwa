@@ -96,9 +96,15 @@ export default class App extends LightningElement {
             // @ts-ignore
             window.createMetatag('og:title',this.currentJoke.headline);
             // @ts-ignore
+            window.createMetatag('twitter:title',this.currentJoke.headline);
+            // @ts-ignore
+            window.createMetatag('twitter:description',this.currentJoke.headline);
+            // @ts-ignore
             window.createMetatag('og:description',this.currentJoke.punchline);
             // @ts-ignore
             window.createMetatag('og:url',document.location);
+            // @ts-ignore
+            window.createMetatag('twitter:url',document.location);
         }
     }
 

@@ -68,17 +68,18 @@
 
         function removeAllMetatags() {
             let metatags = document.querySelectorAll("[property^='og:']");
-            console.log(metatags.length);
             if (metatags.length > 0) {
                 metatags.forEach((element) => {
                     element.remove();
                 })
             }
-            console.log(metatags.length);
-            // document.querySelector("[name='og:title']").remove();
-            // document.querySelector("[name='og:description']").remove();
-            // document.querySelector("[name='og:image']").remove();
-            // document.querySelector("[name='og:url']").remove();
+
+            let metatags = document.querySelectorAll("[property^='twitter:']");
+            if (metatags.length > 0) {
+                metatags.forEach((element) => {
+                    element.remove();
+                })
+            }
         }
     </script>
 </head>
