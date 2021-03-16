@@ -84,6 +84,22 @@ export default class App extends LightningElement {
             }
         })
         this.currentJoke = await joke.json();
+
+        // add social meta tags
+        // @ts-ignore
+        if(window.removeAllMetatags){
+            // @ts-ignore
+           window.removeAllMetatags();
+        }
+        // @ts-ignore
+        if(window.createMetatag){
+            // @ts-ignore
+            window.createMetatag('og:title',this.currentJoke.headline);
+            // @ts-ignore
+            window.createMetatag('og:description',this.currentJoke.punchline);
+            // @ts-ignore
+            window.createMetatag('og:url',document.location);
+        }
     }
 
     // Getters/Setters
