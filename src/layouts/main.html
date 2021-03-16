@@ -42,13 +42,31 @@
         }
     </style>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y1HPD3QDQK"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E0PVQ1MJ4X"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
 
-        gtag('config', 'G-Y1HPD3QDQK');
+        gtag('config', 'G-E0PVQ1MJ4X');
+    </script>
+    <!-- Global script for setting metatags -->
+    <!-- <meta property="og:title" content="European Travel Destinations">
+<meta property="og:description" content="Offering tour packages for individuals or groups.">
+<meta property="og:image" content="http://euro-travel-example.com/thumbnail.jpg">
+<meta property="og:url" content="http://euro-travel-example.com/index.htm">
+ var link = document.createElement('meta');
+  link.setAttribute('property', 'og:url');
+  link.content = document.location;
+  document.getElementsByTagName('head')[0].appendChild(link); -->
+    <script>
+        // Global function to add 
+        function createMetatag(property, content){
+            let metatag = document.createElement('meta');
+            metatag.setAttribute('property',property);
+            metatag.content = content;
+            document.getElementsByTagName('head')[0].appendChild(metatag);
+        } 
     </script>
 </head>
 
