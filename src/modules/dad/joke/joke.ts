@@ -26,10 +26,6 @@ export default class Joke extends LightningElement {
         return undefined;
     }
 
-    get nextJokeHref(){
-        return `#/jokes/${this.nextJoke}`;
-    }
-
     get tweetLink() {
         return `${TWITTER_URL}?text=${encodeURI(this.joke.headline)}%0A${encodeURI(this.joke.punchline)}%0A&url=${encodeURI(`https://www.papajoke.com/api/social/${this.joke._id}`)}&hashtags=papajoke,dadabase`;
     }
