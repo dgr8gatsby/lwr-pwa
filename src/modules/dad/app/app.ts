@@ -50,7 +50,27 @@ export default class App extends LightningElement {
 
         let js = await response.json();
         this.jokeIds = Object.values(js.items.map((value: any) => value._id));
+        this.jokeIds = this.shuffle(this.jokeIds);
     }
+
+    shuffle(array: any) {
+        var currentIndex = array.length, temporaryValue, randomIndex;
+      
+        // While there remain elements to shuffle...
+        while (0 !== currentIndex) {
+      
+          // Pick a remaining element...
+          randomIndex = Math.floor(Math.random() * currentIndex);
+          currentIndex -= 1;
+      
+          // And swap it with the current element.
+          temporaryValue = array[currentIndex];
+          array[currentIndex] = array[randomIndex];
+          array[randomIndex] = temporaryValue;
+        }
+      
+        return array;
+      }
 
     async getMetadata(){
         let api_url = '/api/meta';
@@ -84,28 +104,6 @@ export default class App extends LightningElement {
             }
         })
         this.currentJoke = await joke.json();
-
-        // add social meta tags
-        // @ts-ignore
-        if(window.removeAllMetatags){
-            // @ts-ignore
-           window.removeAllMetatags();
-        }
-        // @ts-ignore
-        if(window.createMetatag){
-            // @ts-ignore
-            window.createMetatag('og:title',this.currentJoke.headline);
-            // @ts-ignore
-            window.createMetatag('twitter:title',this.currentJoke.headline);
-            // @ts-ignore
-            window.createMetatag('twitter:description',this.currentJoke.headline);
-            // @ts-ignore
-            window.createMetatag('og:description',this.currentJoke.punchline);
-            // @ts-ignore
-            window.createMetatag('og:url',document.location);
-            // @ts-ignore
-            window.createMetatag('twitter:url',document.location);
-        }
     }
 
     // Getters/Setters

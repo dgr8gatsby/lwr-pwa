@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="The dad joke application that makes dad jokes better, for all of us!" />
     <meta name="theme-color" content="#EB8400" />
-    <meta name="twitter:card" content="summary" />
     <link rel="manifest" href="/public/assets/manifest.json">
     <link rel="apple-touch-icon" href="/public/assets/apple-touch-icon.png" />
     <link rel="apple-touch-icon" sizes="57x57" href="/public/assets/apple-touch-icon-57x57.png" />
@@ -50,37 +49,6 @@
         gtag('js', new Date());
 
         gtag('config', 'G-E0PVQ1MJ4X');
-    </script>
-    <!-- Global script for setting metatags -->
-    <!-- 
- var link = document.createElement('meta');
-  link.setAttribute('property', 'og:url');
-  link.content = document.location;
-  document.getElementsByTagName('head')[0].appendChild(link); -->
-    <script>
-        // Global function to add 
-        function createMetatag(property, content) {
-            let metatag = document.createElement('meta');
-            metatag.setAttribute('property', property);
-            metatag.content = content;
-            document.getElementsByTagName('head')[0].appendChild(metatag);
-        }
-
-        function removeAllMetatags() {
-            let metatags = document.querySelectorAll("[property^='og:']");
-            if (metatags.length > 0) {
-                metatags.forEach((element) => {
-                    element.remove();
-                })
-            }
-
-            let metatagsTwitter = document.querySelectorAll("[property^='twitter:']");
-            if (metatagsTwitter.length > 0) {
-                metatagsTwitter.forEach((element) => {
-                    element.remove();
-                })
-            }
-        }
     </script>
 </head>
 
